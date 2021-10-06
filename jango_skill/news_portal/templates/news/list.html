@@ -1,0 +1,19 @@
+<html>
+
+<body>
+
+<ul>
+  {% for news in news %}
+  <li>{{ news.name }} -> {{ news.chapter }}</li>
+  {%  endfor %}
+</ul>
+
+<form method="POST" action="/news/">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Добавить новость">
+</form>
+
+</body>
+
+</html>
